@@ -15,7 +15,6 @@ def location_per_collision(x_initial, y_initial, vx_initial, vy_initial):
 
 def random_angle():
     return random.random()*2*math.pi
-1b
 
 def collision():
     """
@@ -28,4 +27,17 @@ def collision():
     return vx, vy
 
 
-def 100
+def hundred_collisions_process(x_initial, y_initial, vx_initial, vy_initial):
+    """
+    :param vy_initial: starting speed at y direction
+    :param vx_initial: starting speed at x direction
+    :param x_initial: start x coordinate
+    :param y_initial: start y coordinate
+    :return: x,y coordinates after 100 collisions
+    """
+    x, y = location_per_collision(x_initial, y_initial, vx_initial, vy_initial)
+    for i in range(100):
+        vx, vy = collision()
+        x, y = location_per_collision(x, y, vx, vy)
+    return x, y
+print(hundred_collisions_process(0,0,0,0))
