@@ -15,7 +15,7 @@ def location_per_collision(x_initial, y_initial, vx_initial, vy_initial):
 
 def random_angle():
     return random.random()*2*math.pi
-
+1bb
 
 def collision():
     """
