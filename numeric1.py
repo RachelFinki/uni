@@ -1,5 +1,6 @@
 import math
 import random
+import numpy
 mass = 9.109
 charge = -1.602
 tau = 10 ** -15
@@ -36,8 +37,16 @@ def hundred_collisions_process(x_initial, y_initial, vx_initial, vy_initial):
     :return: x,y coordinates after 100 collisions
     """
     x, y = location_per_collision(x_initial, y_initial, vx_initial, vy_initial)
+    x_coordinates = []
+    y_coordinates = []
     for i in range(100):
         vx, vy = collision()
         x, y = location_per_collision(x, y, vx, vy)
-    return x, y
+        x_coordinates.append(x)
+        y_coordinates.append(y)
+    x_coordinates = numpy.array(x_coordinates)
+    y_coordinates = numpy.array(y_coordinates)
+    return x, y, x_coordinates, y_coordinates
+
+
 print(hundred_collisions_process(0,0,0,0))
