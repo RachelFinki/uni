@@ -48,5 +48,5 @@ def hundred_collisions_process(x_initial, y_initial, vx_initial, vy_initial):
     y_coordinates = numpy.array(y_coordinates)
     return x, y, x_coordinates, y_coordinates
 
-
+ff
 print(hundred_collisions_process(0,0,0,0))
